@@ -8,10 +8,17 @@ authors = ["mxxntype <59417007+mxxntype@users.noreply.github.com>"]
 unsafe_code = "forbid"
 
 [lints.clippy]
-enum_glob_use = "deny"
 pedantic = "deny"
 nursery = "deny"
 complexity = "deny"
 perf = "deny"
+enum_glob_use = { level = "deny", priority = 1 }
+single_match_else = { level = "allow", priority = 1 }
+option_if_let_else = { level = "allow", priority = 1 }
+or_fun_call = { level = "allow", priority = 1 }
 
 [dependencies]
+crossterm = "0.27.0"
+ratatui = "0.26.3"
+serde = { version = "1.0.203", features = ["derive"] }
+serde_json = "1.0.117"
